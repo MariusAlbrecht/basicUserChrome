@@ -1,0 +1,332 @@
+/*************
+    urlbar
+**************/
+/* remove unneccesary urlbar buttons (bookmark, reader, verified and tracking)*/
+#page-action-buttons,
+#identity-box,
+#tracking-protection-icon-container {
+    display: none;
+}
+
+/*fix margin*/
+#urlbar-input {
+    margin-left: 10px !important;
+}
+
+/*************
+    navbar
+**************/
+/*  Remove empty space between the tabs and the window controls */
+hbox.titlebar-spacer:nth-child(3) {
+    display: none;
+}
+
+#tabbrowser-tabs .tabbrowser-tab[selected][fadein]:not([pinned]) {
+    /*from https://github.com/datguypiko/Firefox-Mod-Blur/blob/master/EXTRA%20MODS/Bigger%20active%20tab/give_more_width_to_active_tab.css*/
+    min-width: 135px !important;
+}
+
+/* Tabs Bar height */
+:root {
+    --tab-min-height: 28px !important;
+}
+
+:root #tabbrowser-tabs {
+    --tab-min-height: 28px !important;
+}
+
+/*remove tab close box, use Ctrl+W*/
+.tab-close-button.close-icon {
+    display: none;
+}
+
+/*remove spacer left to thetabs*/
+hbox.titlebar-spacer:nth-child(1) {
+    display: none;
+}
+
+/*remove arrows that scroll through tabs*/
+#scrollbutton-down,
+#scrollbutton-up {
+    display: none;
+}
+
+/*remove Firefox View*/
+#firefox-view-button {
+    display: none;
+}
+
+/*remove lines left to the tabs*/
+#tabbrowser-tabs {
+    border-inline-start: none !important;
+    padding-inline-start: 0 !important;
+    margin-inline-start: 0 !important;
+}
+
+/*remove new tab button*/
+#new-tab-button,
+#tabbrowser-arrowscrollbox-periphery {
+    display: none;
+}
+
+/*remove forward & reload button*/
+#forward-button,
+#stop-reload-button {
+    display: none;
+}
+
+/*remove the List tabs mutton (to the right of the newtab button)*/
+#alltabs-button {
+    display: none;
+}
+
+/*change extension menu icon to original overflow menu icon*/
+#unified-extensions-button {
+    list-style-image: url("chrome://global/skin/icons/chevron.svg") !important;
+}
+
+/*remove separator lines from zoom widget*/
+#zoom-controls>separator:nth-child(2),
+#zoom-controls>separator:nth-child(4) {
+    display: none !important;
+}
+
+/*remove zoom percentage label*/
+#zoom-reset-button {
+    display: none;
+}
+
+/* remove text field context menu items */
+#context-savelinktopocket,
+#context-keywordfield,
+#spell-check-enabled,
+#context-undo,
+#context-redo,
+#context-cut,
+#context-paste,
+#context-delete {
+    display: none;
+}
+
+/* remove link context menu items */
+#context-openlinkprivate,
+#context-bookmarklink,
+#context-savelinktopocket {
+    display: none;
+}
+
+
+/*unify margins*/
+.toolbaritem-combined-buttons:not([widget-type="button-and-view"], [widget-type="custom"]),
+.toolbaritem-menu-buttons {
+    margin-inline-end: 0px !important;
+}
+
+/*unify margins*/
+#zoom-out-button {
+    margin-right: 4px;
+}
+
+/************* 
+Clean and tight extensions menu
+**************/
+
+#unified-extensions-panel #unified-extensions-view {
+    width: 100% !important;
+    /*  For firefox v115.x */
+}
+
+#unified-extensions-view {
+    --uei-icon-size: 18px;
+    /*  Change icon size */
+    --firefoxcss-number-of-extensions-in-a-row: 2;
+    /*  Increase to the number of icons you want in one row */
+}
+
+#unified-extensions-view .panel-header,
+#unified-extensions-view .panel-header+toolbarseparator,
+#unified-extensions-view .panel-subview-body+toolbarseparator,
+#unified-extensions-view #unified-extensions-manage-extensions,
+#unified-extensions-view .unified-extensions-item-menu-button.subviewbutton,
+#unified-extensions-view .unified-extensions-item-action-button .unified-extensions-item-contents {
+    display: none !important;
+}
+
+#unified-extensions-view .panel-subview-body {
+    padding: 4px !important;
+}
+
+#unified-extensions-view .unified-extensions-item .unified-extensions-item-icon,
+#unified-extensions-view .unified-extensions-item .toolbarbutton-badge-stack {
+    margin-inline-end: 0px !important;
+}
+
+#unified-extensions-view #overflowed-extensions-list,
+#unified-extensions-view #unified-extensions-area,
+#unified-extensions-view .unified-extensions-list {
+    display: grid !important;
+    grid-template-columns: repeat(var(--firefoxcss-number-of-extensions-in-a-row), auto);
+    justify-items: left !important;
+    align-items: left !important;
+}
+
+#unified-extensions-view .unified-extensions-list .unified-extensions-item,
+#unified-extensions-view .unified-extensions-list {
+    max-width: max-content;
+}
+
+#wrapper-edit-controls:is([place="palette"],
+    [place="panel"])>#edit-controls,
+#wrapper-zoom-controls:is([place="palette"],
+    [place="panel"])>#zoom-controls,
+:is(panelview, #widget-overflow-fixed-list) .toolbaritem-combined-buttons {
+    margin: 0px !important;
+}
+
+menupopup :-moz-any(menu, menuitem) {
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+    padding-top: 4px !important;
+    padding-bottom: 4px !important;
+}
+
+menupopup :-moz-any(menu:first-child, menuitem:first-child) {
+    margin-top: 0px !important;
+}
+
+menupopup :-moz-any(menu:last-child, menuitem:last-child) {
+    margin-bottom: 0px !important;
+}
+
+/******************
+    context menu
+*******************/
+
+#context-navigation:not([hidden]) {
+    padding: 1px 4px 1px !important;
+    border-top-left-radius: 8px !important;
+    border-top-right-radius: 8px !important;
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+}
+
+menupopup#contentAreaContextMenu {
+    --panel-padding: unset !important;
+    --panel-padding: 0 0 5px !important;
+}
+
+.menupopup-arrowscrollbox {
+    overflow: hidden !important;
+}
+
+menupopup menuitem:is(#context-openlinkintab, #context-undo, #context-viewimage) {
+    margin-top: 5px !important;
+}
+
+/**********************************
+    remove context menu entries
+**********************************/
+/*all menu separators*/
+menuseparator {
+    display: none;
+}
+
+toolbarseparator {
+    visibility: hidden;
+}
+
+/*back, forward, reload and bookmark on normal rightclick menu*/
+#context-navigation {
+    max-height: 0.3em !important;
+}
+
+label.toolbarbutton-text:nth-child(1) {
+    margin-left: 9px !important;
+}
+
+/*save as, save to pocket, select all, take screenshot, page source, inspect, accessibility, copy text, print selection, view selection source*/
+#context-savepage,
+#context-pocket,
+#context-selectall,
+#context-take-screenshot,
+#context-viewsource,
+#context-inspect-a11y,
+#context-copy,
+#context-print-selection,
+#context-viewpartialsource-selection {
+    display: none;
+}
+
+/* remove hamburger menu items */
+#appMenu-fxa-status2,
+#appMenu-new-window-button2,
+#appMenu-new-private-window-button2,
+#appMenu-bookmarks-button,
+#appMenu-passwords-button,
+#appMenu-downloads-button,
+#appMenu-find-button2 {
+    display: none !important;
+}
+
+/* remove hamburger menu zoom + - and fuulscreen items */
+#appMenu-fullscreen-button2,
+#appMenu-zoomEnlarge-button2,
+#appMenu-zoomReduce-button2 {
+    display: none;
+}
+#appMenu-fxa-separator,
+#appMenu-protonMainView > vbox:nth-child(1) > toolbarseparator:nth-child(8),
+#appMenu-protonMainView > vbox:nth-child(1) > toolbarseparator:nth-child(20),
+#appMenu-protonMainView > vbox:nth-child(1) > toolbarseparator:nth-child(14){
+    display: none !important;
+}
+
+/* remove context menu image links items */
+#context-openlinkinusercontext-menu,
+#context-openlinkintab,
+#context-openlink,
+#context-viewimage,
+#context-sendimage,
+#context-setDesktopBackground,
+#context-saveimage {
+    display: none;
+}
+
+/*extension logos*/
+.menu-iconic-left {
+    display: none;
+}
+
+#context-searchselect .menu-text {
+    visibility: collapse;
+}
+
+#context-searchselect::before {
+    content: "Search";
+}
+
+.menupopup-arrowscrollbox {
+    padding: o auto 5px !important;
+}
+
+#overflowMenu-customize-button {
+    display: none;
+}
+
+/******************************
+    change context menu size
+*******************************/
+#contentAreaContextMenu:nth-child(1) {
+    margin-top: -6px;
+}
+
+menupopup>* {
+    padding-inline-start: 1em !important;
+}
+
+/*********************
+    urlbar results
+**********************/
+.urlbarView-title-separator {
+    visibility: hidden;
+}
