@@ -2,9 +2,16 @@
     urlbar
 **************/
 /* remove unneccesary urlbar buttons (bookmark, reader, verified and tracking)*/
-#page-action-buttons,
+#reader-mode-button,
+#pageActionButton,
+#star-button-box,
 #identity-box,
 #tracking-protection-icon-container {
+    display: none;
+}
+
+/* remove translation button locale text, e.g. "en" when the site is translated to english */
+#translations-button-locale {
     display: none;
 }
 
