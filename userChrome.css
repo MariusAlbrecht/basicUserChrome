@@ -4,6 +4,7 @@
 tabbrowser tabpanels {
     background-color: rgb(19, 19, 20) !important;
 }
+
 browser {
     background-color: #131314 !important;
 }
@@ -13,7 +14,6 @@ browser {
 **************/
 /* remove unneccesary urlbar buttons (bookmark, reader, verified and tracking)*/
 #reader-mode-button,
-#pageActionButton,
 #star-button-box,
 #identity-box,
 #tracking-protection-icon-container {
@@ -21,9 +21,9 @@ browser {
 }
 
 /* remove translation button locale text, e.g. "en" when the site is translated to english */
-#translations-button-locale {
+/* #translations-button-locale {
     display: none;
-}
+} */
 
 /*fix margin*/
 #urlbar-input {
@@ -219,6 +219,11 @@ menupopup :-moz-any(menu:last-child, menuitem:last-child) {
     context menu
 *******************/
 
+/* fix some weird indenting on menuitem's text */
+.menu-text {
+    margin-inline-start: 0px !important;
+}
+
 #context-navigation:not([hidden]) {
     padding: 1px 4px 1px !important;
     border-top-left-radius: 8px !important;
@@ -291,10 +296,11 @@ label.toolbarbutton-text:nth-child(1) {
 #appMenu-zoomReduce-button2 {
     display: none;
 }
+
 #appMenu-fxa-separator,
-#appMenu-protonMainView > vbox:nth-child(1) > toolbarseparator:nth-child(8),
-#appMenu-protonMainView > vbox:nth-child(1) > toolbarseparator:nth-child(20),
-#appMenu-protonMainView > vbox:nth-child(1) > toolbarseparator:nth-child(14){
+#appMenu-protonMainView>vbox:nth-child(1)>toolbarseparator:nth-child(8),
+#appMenu-protonMainView>vbox:nth-child(1)>toolbarseparator:nth-child(20),
+#appMenu-protonMainView>vbox:nth-child(1)>toolbarseparator:nth-child(14) {
     display: none !important;
 }
 
@@ -326,8 +332,13 @@ label.toolbarbutton-text:nth-child(1) {
 }
 
 /* extension submenus */
-#_73a6fe31-595d-460b-a920-fcc0f8843232_-menuitem-_noscript-ctx-menu /*NoScript*/,
-#ublock0_raymondhill_net-menuitem-_uBlock0-blockElement /* uBlock "Block Element" */ {
+#_73a6fe31-595d-460b-a920-fcc0f8843232_-menuitem-_noscript-ctx-menu
+/*NoScript*/
+,
+#ublock0_raymondhill_net-menuitem-_uBlock0-blockElement
+
+/* uBlock "Block Element" */
+    {
     display: none;
 }
 
