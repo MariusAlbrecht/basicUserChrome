@@ -1,3 +1,13 @@
+/**************************
+    remove white flash
+**************************/
+tabbrowser tabpanels {
+    background-color: rgb(19, 19, 20) !important;
+}
+browser {
+    background-color: #131314 !important;
+}
+
 /*************
     urlbar
 **************/
@@ -299,8 +309,25 @@ label.toolbarbutton-text:nth-child(1) {
     display: none;
 }
 
+/* tabs */
+#context_openANewTab,
+#context_reloadTab,
+#context_toggleMuteTab,
+#context_duplicateTab,
+#context_moveTabOptions,
+#context_selectAllTabs,
+#context_closeTabOptions {
+    display: none;
+}
+
 /*extension logos*/
 .menu-iconic-left {
+    display: none;
+}
+
+/* extension submenus */
+#_73a6fe31-595d-460b-a920-fcc0f8843232_-menuitem-_noscript-ctx-menu /*NoScript*/,
+#ublock0_raymondhill_net-menuitem-_uBlock0-blockElement /* uBlock "Block Element" */ {
     display: none;
 }
 
